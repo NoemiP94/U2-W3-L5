@@ -5,6 +5,7 @@ const descriptionProductInput = document.getElementById('description')
 const brandProductInput = document.getElementById('brand')
 const imageProductInput = document.getElementById('imageUrl')
 const priceProductInput = document.getElementById('price')
+console.log(productId)
 
 // per la modifica
 if (productId) {
@@ -32,6 +33,7 @@ if (productId) {
       }
     })
     .then((productDetails) => {
+      // ripopolare il form con i dati del prodotto da modificare
       nameProductInput.value = productDetails.name
       descriptionProductInput.value = productDetails.description
       brandProductInput.value = productDetails.brand
@@ -73,7 +75,7 @@ formProduct.addEventListener('submit', (e) => {
     methodMod = 'PUT'
   }
 
-  let url = 'https://striveschool-api.herokuapp.com/api/product/'
+  let url = 'https://striveschool-api.herokuapp.com/api/product'
   if (productId) {
     url = 'https://striveschool-api.herokuapp.com/api/product/' + productId
   }

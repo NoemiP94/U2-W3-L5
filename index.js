@@ -12,12 +12,12 @@ const showProduct = function (arrayProducts) {
     const col = document.createElement('div')
     col.classList.add('col', 'col-12', 'col-md-6', 'col-lg-3', 'my-5')
     col.innerHTML = `<div class="card my-4 h-100">
-    <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
-    <div class="card-body">
+    <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}" style='height:400px'>
+    <div class="card-body d-flex flex-column align-items-center justify-content-center">
       <h5 class="card-title">${product.name}</h5>
       <p class="card-text">${product.brand}</p>
-      <p class="card-text">${product.description}</p>
-      <p class="card-text">${product.price}</p>
+      <p class="card-text text-center">${product.description}</p>
+      <p class="card-text">${product.price}€</p>
       <a href="./details.html?productId=${product._id}" class="btn btn-primary m-2">Scopri di più</a>
       <a href="./backoffice.html?productId=${product._id}" class="btn btn-warning m-2">Modifica</a>
       <a href="./details.html?productId=${product._id}" class="btn btn-danger m-2" id="delete-btn">Elimina</a>
